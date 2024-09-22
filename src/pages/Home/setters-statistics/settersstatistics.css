@@ -1,0 +1,9 @@
+.card-3 {
+  width: 49%;
+  height: 360px;
+  border-radius: 20px;
+  border: solid 1px rgba(35, 193, 255, 1);
+  padding: 30px;
+  color: white;
+  background: linear-gradient(rgba(46, 167, 255, 0), rgba(46, 167, 255, 0.1));
+}

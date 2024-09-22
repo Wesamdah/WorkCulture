@@ -1,0 +1,111 @@
+.aboutus-wrapper {
+  padding: 10px 30px;
+  width: 100%;
+  height: calc(100vh - 80px);
+  overflow-y: scroll;
+  user-select: none;
+}
+
+.ethics,
+.faq {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  padding: 20px 0;
+}
+.our-ethcis,
+.faq-container {
+  width: 100%;
+  height: fit-content;
+  border: solid 1px rgba(35, 193, 255, 1);
+  border-radius: 20px;
+  box-shadow: 0px 10px 10px 0px #0000001a, 0px 4px 4px 0px #0000000d,
+    0px 1px 0px 0px #0000000d;
+  padding: 40px 60px;
+}
+
+.faq-container {
+  overflow-y: scroll;
+}
+
+.our-ethcis p:first-child,
+.faq-container > p:first-of-type {
+  text-align: center;
+  background: linear-gradient(#00fefc -41.67%, #0002fe 141.58%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.faq-container > p:last-of-type {
+  color: #fefefe;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.faq-container > p:last-of-type svg {
+  color: #dee1e6;
+  padding-top: 4px;
+  width: 20px;
+  height: 16px;
+}
+
+.our-ethcis p:last-child {
+  text-align: justify;
+  width: 95%;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fefefe;
+  margin-bottom: 20px;
+}
+
+.faq-container .question {
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+
+.faq-container .question .question-title {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+}
+.faq-container .question .question-title p,
+.faq-container .question .question-title span {
+  color: #fefefe;
+}
+
+.faq-container .question .question-title p {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.faq-container .question .question-title span {
+  font-size: 30px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.faq-container .question .show-answer,
+.faq-container .question .hide-answer {
+  color: #7edbff;
+  padding: 10px 0;
+  font-weight: 300;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.faq-container .question .show-answer {
+  height: 50px;
+}
+
+.faq-container .question .hide-answer {
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+}

@@ -1,0 +1,157 @@
+.container {
+  width: 100%;
+  height: calc(100vh - 80px);
+  padding: 30px;
+  overflow-y: scroll;
+}
+
+.container .actual-work {
+  width: 100%;
+}
+
+.container .x-point {
+  width: 70%;
+}
+
+.container .actual-work,
+.container .x-point {
+  height: 450px;
+  border-radius: 20px;
+  border: solid 1px rgba(35, 193, 255, 1);
+  color: white;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(46, 167, 255, 0) 57.41%,
+    rgba(46, 167, 255, 0.1) 100%
+  );
+}
+
+.container .actual-work .to-do,
+.container .actual-work .done,
+.container .x-point .to-do,
+.container .x-point .done {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .actual-work .to-do,
+.container .actual-work .done {
+  width: 38%;
+}
+
+.container .x-point .to-do {
+  width: 45%;
+}
+
+.container .x-point .done {
+  width: 55%;
+}
+
+.container .actual-work .to-do > p,
+.container .actual-work .done > p,
+.container .x-point .done > p {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.container .x-point .to-do > p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 28px;
+  margin-right: auto;
+  margin-left: 25px;
+}
+
+.container .actual-work .to-do .goals-container .goal-box,
+.container .actual-work .to-do .add-goal,
+.container .x-point .to-do .goals-container .goal-box,
+.container .x-point .to-do .add-goal {
+  background-image: linear-gradient(
+    103.18deg,
+    #00fefc -41.67%,
+    #0002fe 141.58%
+  );
+  border: none;
+}
+
+.container .actual-work .to-do .goals-container .goal-box .non-checked,
+.container .x-point .to-do .goals-container .goal-box .non-checked {
+  background-image: linear-gradient(transparent, transparent);
+  border: 2px solid white;
+}
+
+.container .actual-work .to-do .add-goal,
+.container .x-point .to-do .add-goal {
+  width: calc(90% - 24px);
+  margin-left: -4px;
+  height: 50px;
+  margin-top: -15px;
+  background-image: linear-gradient(
+    103.18deg,
+    #00fefc -41.67%,
+    #0002fe 141.58%
+  );
+  border: none;
+}
+
+.actual-work .to-do .add-goal svg,
+.x-point .to-do .add-goal svg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2px;
+}
+
+.container .actual-work .to-do .goals-container,
+.container .actual-work .done .goals-container,
+.container .x-point .to-do .goals-container-2,
+.container .x-point .done .goals-container-2 {
+  width: 90% !important;
+}
+
+.container .actual-work .done,
+.container .x-point .done {
+  border-left: solid 1px rgba(35, 193, 255, 1);
+  padding: 0 20px;
+}
+
+.container .actual-work .done {
+  border-right: solid 1px rgba(35, 193, 255, 1);
+}
+
+.container .actual-work .complete,
+.container .x-point .complete {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .x-point p {
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.container .x-point p svg {
+  margin-right: 10px;
+}
+
+.container .x-point p span {
+  margin: 0 5px;
+  background: linear-gradient(103.18deg, #00fefc -41.67%, #0002fe 141.58%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+}

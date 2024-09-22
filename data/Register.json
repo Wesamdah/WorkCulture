@@ -1,0 +1,44 @@
+{
+  "register": [
+    {
+      "id": "cb1c",
+      "name": "wesam",
+      "email": "we@w.com",
+      "password": "wesamQ!1",
+      "password_confirmation": "wesamQ!1",
+      "phone": "665626212",
+      "backpoint_id": "1",
+      "direction_id": "1",
+      "subdirection_ids": [
+        "2"
+      ],
+      "image": {}
+    },
+    {
+      "id": "140d",
+      "name": "wesam",
+      "email": "dahrouj@gmail.com",
+      "password": "dahroujQ!1",
+      "password_confirmation": "dahroujQ!1",
+      "phone": "+96325151",
+      "backpoint_id": "1",
+      "direction_id": "2",
+      "subdirection_ids": [
+        "3"
+      ],
+      "image": {}
+    }
+  ],
+  "login": [
+    {
+      "id": "ca2d",
+      "email": "w@w.com",
+      "pwd": "w"
+    },
+    {
+      "id": "de1f",
+      "email": "w@w.com",
+      "pwd": "w"
+    }
+  ]
+}

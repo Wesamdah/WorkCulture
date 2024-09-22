@@ -1,0 +1,44 @@
+.header .notfication-section .dropdown .contnent .note {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.header .notfication-section .dropdown .contnent .note:not(:last-child) {
+  border-bottom: 1px solid beige;
+}
+
+.header .notfication-section .dropdown .contnent .note .icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 30px;
+}
+
+.header .notfication-section .dropdown .contnent .note .text {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: calc(100% - 48px - 20px);
+  margin-left: 15px;
+  padding-right: 15px;
+}
+
+.header .notfication-section .dropdown .contnent .note .text span:first-child {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 1);
+}
+.header .notfication-section .dropdown .contnent .note .text span:last-of-type {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 3px 0;
+}

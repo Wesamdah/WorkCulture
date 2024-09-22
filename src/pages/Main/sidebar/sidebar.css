@@ -1,0 +1,223 @@
+.sidebar {
+  position: relative;
+  height: calc(100vh + 20px);
+  width: 260px;
+  top: -8px;
+  background-color: rgba(15, 9, 12, 0.56);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 28px;
+  box-shadow: 0px 64px 64px -32px rgba(41, 15, 0, 0.56);
+  transition: 0.3s;
+}
+
+.hide {
+  width: 100px;
+}
+
+.sidebar .img-logo {
+  max-width: 143.14px;
+  width: 70%;
+  height: 34.3px;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
+.sidebar .img-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar .icon {
+  position: absolute;
+  top: 80px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(15, 9, 12);
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+}
+
+.sidebar .icon svg {
+  background-clip: text;
+  font-size: 30px;
+  color: var(--main-color);
+}
+
+.sidebar,
+.sidebar .icon {
+  border: double 1px transparent;
+  background-image: linear-gradient(rgba(15, 9, 12), rgba(15, 9, 12)),
+    linear-gradient(to bottom, rgb(0, 2, 254, 1) 10%, rgb(0, 254, 252, 1) 125%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 0 64px 64px -32px rgba(15, 9, 12, 0.56);
+}
+
+.sidebar .icon img {
+  width: 12px;
+  height: 18px;
+}
+
+.sidebar .routes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 85%;
+  margin-top: 20px;
+}
+
+.sidebar .routes .link {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 5px 0;
+  font-size: 15px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.sidebar .routes .link .route-name {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .routes .link:hover {
+  background-color: #0002fe;
+  color: white;
+  font-weight: bold;
+}
+
+.sidebar .routes .link:hover a {
+  color: white;
+  font-weight: bold;
+}
+
+.sidebar .routes .link:hover path,
+.sidebar .routes .link:hover ellipse,
+.sidebar .routes .link:hover g {
+  fill: white;
+  opacity: 1;
+}
+
+.sidebar .routes .link svg {
+  margin-right: 10px;
+}
+
+/* active class */
+
+.sidebar .routes .active {
+  background: #0002fe;
+  color: white;
+  font-weight: bold;
+}
+
+.sidebar .routes .active path,
+.sidebar .routes .active ellipse,
+.sidebar .routes .active g {
+  fill: white;
+  opacity: 1;
+}
+
+/* active class */
+
+.sidebar button {
+  height: 40px;
+  width: 80%;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  margin: 0;
+}
+
+.sidebar .btn-1 {
+  width: 70%;
+  height: 45px;
+  padding: 5px 0;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #00fefc, #0002fe);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 30px 0;
+}
+
+.sidebar button img {
+  margin-right: 5px;
+}
+
+.sidebar .logout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+  height: 140px;
+  background-color: rgba(56, 14, 36, 0.1);
+  /* box-shadow: 0 64px 64px -32px rgba(102, 37, 0, 0.65); */
+  border: double 1px transparent;
+  background-image: linear-gradient(rgba(15, 9, 12), rgba(15, 9, 12)),
+    linear-gradient(
+      to bottom,
+      rgba(184, 110, 159, 0.48),
+      rgba(35, 193, 255, 0.48)
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-radius: 28px;
+}
+
+.sidebar .logout .info {
+  display: flex;
+  align-items: center;
+  margin: 20px 5px;
+}
+
+.sidebar .logout .info .img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* this color will take from api */
+  border: 1px solid var(--main-color);
+}
+
+.sidebar .logout .info .img img {
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar .logout .info .sub-info {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-left: 5px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.sidebar .logout .info .sub-info p:first-of-type {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.32);
+  margin-bottom: 5px;
+}
+
+.sidebar .logout .info .sub-info p:last-of-type {
+  font-size: 14px;
+}

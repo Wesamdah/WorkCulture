@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import MainLayout from "./pages/Main/Main";
+import SignUp from "./pages/SignUp/SignUp";
+import Login from "./pages/Login/Login";
+// import Error from "./pages/Error";
+import { AnimatePresence } from "framer-motion";
+import RequiredAuth from "./RequiredAuth";
+export function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <AnimatePresence mode="wait">
+          <Routes>
+            <Route path="/SignUp" element={<SignUp />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/*" element={<Navigate to="/Login" />} />
+            {/* <Route path="/*" element={<Error />} /> */}
+            <Route element={<RequiredAuth />}>
+              <Route path="/dashbord/*" element={<MainLayout />} />
+            </Route>
+          </Routes>
+        </AnimatePresence>
+      </BrowserRouter>
+    </>
   );
 }
 

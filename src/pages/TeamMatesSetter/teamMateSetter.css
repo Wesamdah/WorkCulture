@@ -1,0 +1,13 @@
+.mateSetter-wrapper {
+  width: 100%;
+  height: 100vh;
+  padding: 10px 30px;
+  overflow-y: scroll;
+}
+
+.mateSetter-wrapper .mateSetter-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}

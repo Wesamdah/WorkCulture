@@ -1,0 +1,43 @@
+.InfoInput-container,
+.InfoInput-container-colored {
+  width: 90%;
+  height: 35px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+}
+
+.InfoInput-container {
+  border: 1px solid #ffffff99;
+}
+
+.InfoInput-container-colored {
+  border: double 1px transparent;
+  background-image: linear-gradient(black, black),
+    linear-gradient(to right, rgba(0, 254, 252, 1) -50%, rgba(0, 2, 254, 1));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.InfoInput-container input,
+.InfoInput-container-colored input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 7px;
+  padding-left: 15px;
+  color: white;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+}
+
+.InfoInput-container > svg,
+.InfoInput-container-colored > svg {
+  margin-right: 15px;
+}
+
+.InfoInput-container > svg:hover,
+.InfoInput-container-colored > svg:hover {
+  color: var(--main-color);
+}

@@ -1,0 +1,20 @@
+.QuestionPage-wrapper {
+  padding: 10px 30px;
+  width: 100%;
+  height: calc(100vh - 80px);
+  overflow-y: scroll;
+}
+
+.QuestionPage-wrapper .the-questions-container {
+  border: double 1px transparent;
+  background-image: linear-gradient(rgba(15, 9, 12), rgba(15, 9, 12)),
+    linear-gradient(103.18deg, #00fefc -41.67%, #0002fe 141.58%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-radius: 16px;
+}
+
+.QuestionPage-wrapper .the-questions-container > div {
+  background: linear-gradient(rgba(46, 167, 255, 0), rgba(46, 167, 255, 0.1));
+  padding: 20px;
+}

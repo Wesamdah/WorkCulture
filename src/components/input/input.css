@@ -1,0 +1,70 @@
+.normal {
+  width: 60%;
+  height: 72px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding-left: 5px;
+  border-bottom: 1px solid #b4b4b4;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.normal::placeholder {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.normal:focus {
+  outline: none;
+  caret-color: var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}
+
+.password {
+  position: relative;
+  width: 60%;
+}
+
+.password .normal {
+  width: 100%;
+}
+
+.password .eyeIcon,
+.password .eyeIcon-activeIcon {
+  opacity: 1;
+  position: absolute;
+  color: #ababab;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.password .eyeIcon:hover {
+  color: var(--main-color);
+}
+
+.password .eyeIcon-activeIcon {
+  color: var(--main-color);
+}
+
+.number {
+  border: 2px solid var(--main-color);
+  border-radius: 10px;
+  width: 91px;
+  height: 92px;
+  margin: 0 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: transparent;
+  color: white;
+  font-size: 40px;
+}
+
+.number:focus {
+  outline: none;
+  caret-color: var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}

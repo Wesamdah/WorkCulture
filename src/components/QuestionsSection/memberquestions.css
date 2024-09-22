@@ -1,0 +1,115 @@
+.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  z-index: 90;
+  opacity: 0.6;
+}
+
+.questions-main-section.on {
+  background-color: black;
+  opacity: 0.4;
+}
+
+.questions-main-section.off {
+  background-color: transparent;
+}
+
+.questions-main-section {
+  width: 100%;
+  height: 100%;
+}
+
+.questions-main-section,
+.questions-main-section .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.questions-main-section .info:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.questions-main-section .info .member-name {
+  width: 140px;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  margin-left: 15px;
+}
+
+.questions-main-section .info .img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid;
+}
+
+.questions-main-section .the-question p {
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: justify;
+  max-width: 320px;
+  width: 320px;
+  padding: 2px 10px;
+}
+
+.questions-main-section .the-date {
+  color: rgba(75, 240, 252, 0.75);
+  font-size: 12px;
+}
+
+.questions-main-section .switch-answered {
+  width: 50px;
+  height: 30px;
+  border-radius: 100px;
+  position: relative;
+  cursor: pointer;
+}
+
+.questions-main-section .switch-answered.on {
+  background: linear-gradient(154deg, #bde3ff -99.11%, #0095ff 96.85%);
+}
+
+.questions-main-section .switch-answered.off {
+  background-color: grey;
+}
+
+.questions-main-section .switch-answered .circle {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.questions-main-section .switch-answered .circle.off {
+  left: 0;
+}
+
+.questions-main-section .switch-answered .circle.on {
+  right: 0;
+}
+
+.questions-main-section .answer-question-btn {
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 70px;
+  cursor: pointer;
+}
+
+.questions-main-section .answer-question-btn.off {
+  background: linear-gradient(103.18deg, #00fefc -41.67%, #0002fe 141.58%);
+}
+
+.questions-main-section .answer-question-btn.on {
+  background: transparent;
+}

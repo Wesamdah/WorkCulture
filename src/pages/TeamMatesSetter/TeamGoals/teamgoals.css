@@ -1,0 +1,38 @@
+.mate-goals-container {
+  width: 100%;
+  min-height: 180px;
+  height: fit-content;
+  border: 0.3px solid #23c1ff;
+  border-radius: 16px;
+  background: linear-gradient(rgba(46, 167, 255, 0), rgba(46, 167, 255, 0.1));
+  display: flex;
+  margin-top: 20px;
+}
+
+.mate-goals-container .x-goal,
+.mate-goals-container .actuall-goal {
+  width: 48%;
+  margin: 0 auto;
+  overflow: visible !important;
+  color: white;
+}
+
+.mate-goals-container .goals-container,
+.mate-goals-container .goals-container-2 {
+  padding: 0 10px;
+  overflow: visible;
+}
+
+.mate-goals-container .actuall-goal {
+  border-right: 0.3px solid #23c1ff;
+}
+
+.mate-goals-container .x-goal > p,
+.mate-goals-container .actuall-goal > p {
+  text-align: center;
+  margin-bottom: auto;
+  color: white;
+  font-weight: 700;
+  font-size: 23px;
+  margin-top: 20px;
+}

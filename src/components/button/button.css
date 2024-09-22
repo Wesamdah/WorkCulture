@@ -1,0 +1,10 @@
+.component-btn {
+  margin-top: 20px;
+  width: 60%;
+  height: 64px;
+  border-radius: 8px;
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}

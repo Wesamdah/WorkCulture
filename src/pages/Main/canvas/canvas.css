@@ -1,0 +1,262 @@
+.canvas {
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  background-color: black;
+  z-index: 100;
+}
+
+.canvas::before {
+  position: absolute;
+  content: "";
+  left: -30px;
+  width: 6%;
+  height: 100%;
+  background: linear-gradient(103.18deg, #0002fe -41.67%, #00fefc 141.58%);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.canvas::after,
+.canvas .left-arrow-canvas {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.canvas::after {
+  content: "";
+  font-size: 20px;
+  left: -50px;
+  width: 7%;
+  height: 203px;
+  border-top-left-radius: 38px;
+  border-bottom-left-radius: 38px;
+  background: linear-gradient(180deg, #0172fd 0%, #018dfd 100%);
+}
+
+.canvas .left-arrow-canvas {
+  left: -35px;
+  fill: white;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.canvas .canvas-content {
+  width: 100%;
+  height: 100vh;
+  padding: 40px;
+}
+
+.canvas .canvas-content .check-box,
+.canvas .canvas-content .non-checked-box {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+  margin-right: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.canvas .canvas-content .check-box {
+  background-color: #018dfd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.canvas .canvas-content .non-checked-box {
+  background-image: linear-gradient(black, black),
+    linear-gradient(to right, rgba(0, 254, 252, 1) -50%, rgba(0, 2, 254, 1));
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.canvas .canvas-content .goal-name,
+.canvas .canvas-content .goal-type {
+  height: 45px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.canvas .canvas-content .goal-name p,
+.canvas .canvas-content .goal-type p {
+  margin-left: 20px;
+}
+
+.canvas .canvas-content .goal-name p,
+.canvas .canvas-content .goal-type p,
+.canvas .canvas-content .goal-name input,
+.canvas .canvas-content .goal-type input {
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.canvas .canvas-content .goal-type .canvasGoal-type {
+  cursor: pointer;
+}
+
+.canvas .canvas-content .goal-type .canvasGoal-type svg {
+  width: 15px;
+  height: 15px;
+}
+
+.canvas .canvas-content .goal-type p,
+.canvas .canvas-content .goal-type .canvasGoal-type .canvas-dropdown span {
+  background: linear-gradient(103.18deg, #00fefc -41.67%, #0002fe 141.58%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.canvas .canvas-content .goal-name,
+.canvas .canvas-content .goal-type,
+.canvas .canvas-content .canvas-textarea,
+.canvas .canvas-content .canvas-attachment,
+.canvas .canvas-content .goal-type input {
+  border: double 1px transparent;
+  background-image: linear-gradient(black, black),
+    linear-gradient(to right, rgba(0, 254, 252, 1) -50%, rgba(0, 2, 254, 1));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-radius: 12px;
+}
+
+.canvas .canvas-content .goal-name {
+  width: 45%;
+}
+
+.canvas .canvas-content .goal-type {
+  width: 35%;
+  margin-left: 20px;
+}
+
+.canvas .canvas-content .canvas-info p {
+  color: rgba(255, 255, 255, 0.59);
+  font-size: 12px;
+  font-weight: 400;
+  width: 400px;
+  user-select: none;
+}
+
+.canvas .canvas-content .canvas-info span {
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+}
+
+.canvas .canvas-content .goal-name input,
+.canvas .canvas-content .goal-type input {
+  width: 80%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: transparent;
+}
+
+.canvas .canvas-content .goal-type input {
+  background: linear-gradient(103.18deg, #00fefc -41.67%, #0002fe 141.58%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: absolute;
+}
+
+.canvas .canvas-content .goal-type input svg {
+  position: relative;
+  color: white;
+  font-size: 30px;
+}
+
+.canvas .canvas-content .goal-type .canvasGoal-type .canvas-dropdown {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  font-weight: bold;
+  width: 180px;
+  height: fit-content;
+  transition: 0.5s;
+  background-color: black;
+  border: 2px solid gray;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.goal-type .canvasGoal-type .canvas-dropdown span {
+  padding: 10px 20px;
+}
+
+.goal-type .canvasGoal-type .canvas-dropdown span:not(:last-child) {
+  border-bottom: 1px solid #777;
+}
+
+.hidden-canvasDropDown {
+  height: 0;
+  font-size: 0;
+}
+
+.canvas .canvas-content .canvas-textarea {
+  width: 100%;
+  height: 200px;
+}
+
+.canvas .canvas-content .canvas-textarea textarea,
+.canvas .canvas-content .canvas-attachment textarea {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  resize: none;
+  caret-color: #01b9fd;
+  font-size: 18px;
+}
+
+.canvas .canvas-content .canvas-textarea textarea:focus,
+.canvas .canvas-content .canvas-attachment textarea {
+  border: none;
+  outline: none;
+}
+
+.canvas .canvas-content .canvas-attachment {
+  margin-top: 30px;
+  height: 150px;
+}
+
+.canvas .canvas-btns {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+}
+
+.canvas .canvas-btns button {
+  width: 176px;
+  height: 50px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  color: white;
+}
+
+.canvas .canvas-btns button:first-of-type {
+  background-color: black;
+}
+
+.canvas .canvas-btns button:last-of-type {
+  background: linear-gradient(103.18deg, #00fefc -41.67%, #0002fe 141.58%);
+}

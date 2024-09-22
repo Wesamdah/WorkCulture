@@ -1,0 +1,215 @@
+/* my component */
+.hidden {
+  height: 0;
+  transition: 1s;
+}
+.hiddenLogin {
+  transition: 1s;
+  height: 0;
+  overflow: hidden;
+  transform: translateY(+120%);
+  z-index: 0;
+}
+
+/*end  my component */
+
+.Register-Error {
+  position: fixed;
+  background-color: transparent;
+  left: 20%;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+  z-index: 100;
+}
+
+.Register-Error.on {
+  top: 5%;
+}
+
+.Register-Error.off {
+  top: -10%;
+}
+
+.Register-Error svg {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.Register-Error p {
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main .img {
+  width: 40%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: end;
+}
+
+.main .img img {
+  width: fit-content;
+  height: 100%;
+}
+
+.infoForm {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  -webkit-user-select: none;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* margin-top: 160px; */
+  text-align: center;
+}
+
+.infoForm > p {
+  color: white;
+}
+
+.infoForm .circle > div {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: rgba(217, 217, 217, 0.8);
+}
+
+.infoForm .circle .active {
+  background-color: var(--main-color);
+}
+
+.infoForm .circle > div:nth-child(2) {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.infoForm > p:nth-child(2) {
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.infoForm .circle {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 20px auto 30px;
+}
+
+.infoForm .login-1,
+.infoForm .login-2,
+.infoForm .login-3 {
+  width: 100%;
+  transform: translateY(0);
+  transition: 1.5s;
+}
+
+.infoForm form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.infoForm .login-1 > p,
+.infoForm .login-2 > p {
+  width: 60%;
+  margin: auto;
+  text-align: start;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+}
+
+.infoForm .login-1 .errMsg {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: red;
+}
+
+.infoForm .login-1 .errMsg svg {
+  margin-right: 5px;
+  color: white;
+}
+
+.infoForm .login-1 > p span,
+.infoForm .login-2 > p span {
+  color: var(--main-color);
+}
+
+.infoForm .login-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoForm .login-2 .input {
+  width: 60%;
+  position: relative;
+}
+
+.infoForm .login-2 .input .normal {
+  width: 100%;
+  cursor: pointer;
+}
+
+.infoForm .login-2 .input .normal:focus {
+  caret-color: black;
+}
+
+.infoForm .login-2 .input .arrowIcon {
+  position: absolute;
+  color: var(--main-color);
+  right: 15px;
+  top: 24px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.infoForm .login-3 .profileImg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 10px auto;
+  border: 2px solid var(--main-color);
+}
+
+.infoForm .login-3 .profileImg img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.infoForm .offscreen {
+  display: none;
+}
+
+.infoForm .instructions {
+  width: 60%;
+  height: 30px;
+  color: white;
+  font-size: 12px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.infoForm .instructions svg {
+  font-size: 16px;
+  margin-right: 5px;
+}

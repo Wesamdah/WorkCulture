@@ -1,0 +1,154 @@
+.profile-wrapper {
+  padding: 10px 30px;
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+
+.profile-container {
+  border-radius: 20px;
+  border: solid 1px rgba(35, 193, 255, 1);
+  width: 100%;
+  height: 100%;
+  padding-top: 15px;
+  overflow: hidden;
+}
+
+.profile-wrapper .profile-container .pic-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pic-container .inputPic-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pic-container .inputPic-container img {
+  width: 80px !important;
+  height: 80px !important;
+  margin-bottom: 10px;
+}
+
+.profile-container .info-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 40px;
+}
+
+.profile-container .info-container .personal-info,
+.profile-container .info-container .state {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-container .info-container .personal-info p {
+  background: linear-gradient(#00fefc -41.67%, #0002fe 141.58%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.profile-container .info-container .personal-info span,
+.profile-container .info-container .state span {
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.profile-container .info-container .state {
+  margin-top: 70px;
+}
+
+.profile-container .info-container .state .text-area,
+.profile-container .info-container .state .colored-text-area {
+  width: 90%;
+  height: 100px;
+  border-radius: 7px;
+}
+
+.profile-container .info-container .state .text-area textarea,
+.profile-container .info-container .state .colored-text-area textarea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 7px;
+  padding-left: 15px;
+  padding-top: 10px;
+  color: white;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.profile-container .info-container .state .text-area {
+  border: 1px solid #ffffff99;
+}
+
+.profile-container .info-container .state .colored-text-area {
+  border: double 1px transparent;
+  background-image: linear-gradient(black, black),
+    linear-gradient(to right, rgba(0, 254, 252, 1) -50%, rgba(0, 2, 254, 1));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.profile-container .info-container .state .agencies-conatiner {
+  width: 100%;
+  height: 35px;
+  border-radius: 7px;
+  margin-top: 5px;
+  position: relative;
+}
+
+.profile-container .state .agencies-conatiner .InfoInput-container,
+.profile-container .state .agencies-conatiner .InfoInput-container-colored {
+  width: 100%;
+}
+
+.profile-container .state .agencies-conatiner svg {
+  position: absolute;
+  content: "";
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+  color: #01b3fd;
+  font-size: 20px;
+}
+
+.profile-container .state .agencies-conatiner .dropDown {
+  height: 120px;
+}
+
+.profile-container .state .profile-btns {
+  width: 100%;
+  height: 45%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 20px;
+  padding-right: 45px;
+}
+
+.profile-container .state .profile-btns .component-btn {
+  width: 140px;
+  margin: 0;
+  height: 40px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.profile-container .state .profile-btns .nonColored-btn {
+  border: none !important;
+}

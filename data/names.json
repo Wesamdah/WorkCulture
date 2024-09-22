@@ -1,0 +1,40 @@
+{
+  "names": [
+    {
+      "id": "1",
+      "name": "Wessam Dahrouj",
+      "percentage": 80,
+      "agency": "DevSyro"
+    },
+    {
+      "id": "2",
+      "name": "Obada Rudainy",
+      "percentage": 85,
+      "agency": "DevSyro"
+    },
+    {
+      "id": "3",
+      "name": "Leen Deeb",
+      "percentage": 100,
+      "agency": "ProSyro"
+    },
+    {
+      "id": "4",
+      "name": "Qusai Nasri",
+      "percentage": 90,
+      "agency": "DevSyro"
+    },
+    {
+      "id": "5",
+      "name": "Mohamad Hassan",
+      "percentage": 70,
+      "agency": "ArtSyro"
+    },
+    {
+      "id": "6",
+      "name": "Zahra Kelani",
+      "percentage": 30,
+      "agency": "ArtSyro"
+    }
+  ]
+}

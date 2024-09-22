@@ -1,0 +1,92 @@
+.card {
+  border-radius: 20px;
+  border: solid 1px rgba(35, 193, 255, 1);
+  padding: 30px;
+  color: white;
+  width: 60%;
+  height: 450px;
+  background-color: black;
+  font-weight: bold;
+}
+
+.card .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card p {
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.card p svg {
+  margin-right: 10px;
+}
+
+.card p span {
+  margin: 0 5px;
+  background: linear-gradient(103.18deg, #00fefc -41.67%, #0002fe 141.58%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+}
+
+.card p img {
+  width: 25px;
+  height: 25px;
+}
+
+.card .btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.card .btns a {
+  color: white;
+}
+
+.card .btns .plus,
+.card .btns .right-arrow {
+  width: 35px;
+  height: 35px;
+  padding: 6px;
+  border: solid 2px rgba(23, 185, 255, 0.5);
+  border-radius: 50%;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.card .add-goal {
+  width: calc(99% - 20px);
+  height: 50px;
+  border-radius: 8px;
+  margin: -15px 10px 15px;
+  border: double 1px transparent;
+  background-image: linear-gradient(black, black),
+    linear-gradient(to right, rgba(0, 254, 252, 1) -50%, rgba(0, 2, 254, 1));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .add-goal svg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(35, 193, 255, 0.26);
+  padding: 2px;
+}
+
+.goals-container {
+  width: 100% !important;
+}
