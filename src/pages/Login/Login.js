@@ -10,14 +10,16 @@ import { motion } from "framer-motion";
 import NewInputs from "../../components/newInputs/NewInputs";
 import UseAuth from "../../hooks/useAuth";
 import OtpVerifecation from "../../components/otpVerifecation/OtpVerifecation";
+import useValidOtp from "../../hooks/useValidOtp";
 
 const PasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 export default function Login() {
   const [check, setCheck] = useState(false);
   const [appearLogin, setAppearLogin] = useState(true);
-  const [showCode, setShowCode] = useState(false);
   const [showRest, setShowReset] = useState(false);
+  const [showCode, setShowCode] = useState(false);
+  const [otp, setOtp] = useState(new Array(4).fill(""));
 
   const navigate = useNavigate();
   const { auth, setAuth } = UseAuth();
@@ -25,6 +27,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
+  const { handleOtpRegister, handleResendOtp } = useValidOtp(setErrMsg, otp);
 
   const [newPwd, setNewPwd] = useState("");
   const [validNewPwd, setValidNewPwd] = useState(false);
@@ -227,11 +230,22 @@ export default function Login() {
           </p>
           <p>Contact our support team</p>
         </div>
-        <OtpVerifecation
+        {/* <OtpVerifecation
           className={showCode && !appearLogin ? "showCode" : "disappear"}
           email={email ? email : localStorage.getItem("email")}
-          handleClick={handleClick2}
+          handleOtp={email ? handleClick2 : handleOtpRegister}
+          handleResendOtp={handleResendOtp}
           tryRegiser={localStorage.getItem("OtpVerivication")}
+          otp={otp}
+          setOtp={setOtp}
+        /> */}
+        <OtpVerifecation
+          className={showCode && !appearLogin ? "showCode" : "disappear"}
+          email={localStorage.getItem("email")}
+          handleOtp={handleOtpRegister}
+          handleResendOtp={handleResendOtp}
+          otp={otp}
+          setOtp={setOtp}
         />
         <div className={showRest ? "restPass" : "disappear"}>
           <p style={{ fontSize: "36px", fontWeight: 700 }}>Reset Password</p>

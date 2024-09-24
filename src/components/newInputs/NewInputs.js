@@ -17,18 +17,40 @@ export default function NewInputs({
   selectVlaue,
   focus,
   blur,
+  setOtp,
+  otp,
 }) {
   const [typo, setTypo] = useState(type);
 
-  const [otp, setOtp] = useState(new Array(4).fill(""));
-
   const handleOtpChange = (e, index) => {
-    if (isNaN(e.target.value)) return false;
-    setOtp([...otp.map((data, i) => (i === index ? e.target.value : data))]);
-    if (e.target.value && e.target.nextSibling) {
-      e.target.nextSibling.focus();
+    const value = e.target.value;
+
+    // Ensure only numeric input and max length of 1 character
+    if (isNaN(value) || value.length > 1) return;
+
+    // Update OTP state
+    const newOtp = [...otp];
+    newOtp[index] = value;
+    setOtp(newOtp);
+
+    // Move to the next input if a digit is entered
+    if (value && index < otp.length - 1) {
+      e.target.nextElementSibling.focus();
     }
   };
+
+  // Handle backspace to move focus to the previous input
+  const handleBackspace = (e, index) => {
+    if (e.key === "Backspace" && !otp[index] && index > 0) {
+      e.target.previousElementSibling.focus();
+    }
+  };
+
+  // Combine the OTP digits to get the complete OTP
+  // const handleSubmit = () => {
+  //   const fullOtp = otp.join(""); // Combine the array into a single string
+  //   console.log("OTP:", fullOtp);
+  // };
 
   return (
     <>
@@ -40,7 +62,12 @@ export default function NewInputs({
             className="number"
             maxLength="1"
             value={data}
+            // onChange={(e) => {
+            //   handleOtpChange(e, index);
+            // }}
             onChange={(e) => handleOtpChange(e, index)}
+            onKeyDown={(e) => handleBackspace(e, index)}
+            onFocus={(e) => e.target.select()}
             required={required}
           />
         ))
@@ -92,3 +119,5 @@ export default function NewInputs({
     </>
   );
 }
+
+//               setOtpInputs(otp.join(""));

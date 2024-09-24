@@ -1,42 +1,37 @@
 import React, { useState, useEffect } from "react";
 import axios from "../../api/axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { motion } from "framer-motion";
+// css files
 import "./SignUp.css";
+// compnents
 import Button from "../../components/button/Button";
 import DropDown from "../../components/dropdown/DropDown";
 import NewInputs from "../../components/newInputs/NewInputs";
 import OtpVerifecation from "../../components/otpVerifecation/OtpVerifecation";
+import useFtechRegister from "../../hooks/useFetchRegister";
+// assetes
 import BackGround from "../../assets/imgs/background-2.png";
-import defaultImage from "../../assets/imgs/clone of photo.png";
+import defaultImage from "../../assets/imgs/theDefaultPhoto.jpg";
 import logo from "../../assets/imgs/logo.png";
+import useValidInputsRegister from "../../hooks/useValidInputsRegister";
+import useValidOtp from "../../hooks/useValidOtp";
 
 const userRegex = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
-const PasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const phoneRegx = /^[0-9-+]{9,18}$/;
 
 export default function SignUp() {
-  const navigate = useNavigate();
+  const { formData, setFormData, backPointData, directions } =
+    useFtechRegister();
+  const { validName, validPwd, validMatch, validPhNum, errMsg, setErrMsg } =
+    useValidInputsRegister(formData);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    password_confirmation: "",
-    phone: "",
-    backpoint_id: "",
-    direction_id: "",
-    subdirection_ids: "",
-    image: "",
-  });
+  const [otp, setOtp] = useState(new Array(4).fill(""));
 
   const [selectValue1, setSelectValue1] = useState("");
   const [selectValue2, setSelectValue2] = useState("");
   const [selectValue3, setSelectValue3] = useState([]);
 
-  const [backPointData, setBackPointData] = useState([]);
-  const [directions, setDirections] = useState([]);
   const subdirection = directions.filter((item) =>
     item.name === selectValue2.name ? null : item
   );
@@ -49,20 +44,17 @@ export default function SignUp() {
   const [showdrop2, setShowdrop2] = useState(false);
   const [showdrop3, setShowdrop3] = useState(false);
 
-  const [validName, setValidName] = useState(false);
   const [userFocus, setuserFocus] = useState(false);
-
-  const [validPwd, setValidPwd] = useState(false);
   const [pwdFocus, setPwdFocus] = useState(false);
-
-  const [validMatch, setValidMatch] = useState(false);
   const [matchFocus, setMatchFocus] = useState(false);
-
-  const [validPhNum, setValidPhNum] = useState(false);
   const [phNumFocus, setPhNuFocus] = useState(false);
 
-  const [errMsg, setErrMsg] = useState("");
   const [registerErrMsg, setRegisterErrMsg] = useState("");
+  const { handleOtpRegister, handleResendOtp } = useValidOtp(
+    setRegisterErrMsg,
+    setErrMsg,
+    otp
+  );
 
   const [imageFile, setImageFile] = useState(null);
   const handleImageUpload = (e) => {
@@ -105,19 +97,22 @@ export default function SignUp() {
     }
   };
 
-  const otpClick = (e) => {
-    e.preventDefault();
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.image) {
-      const defaultFile = new File([defaultImage.blob], "image.png", {
-        type: "image/png",
-      });
-      setFormData({ ...formData, image: defaultFile });
-    }
+    // if (!formData.image) {
+    // const convertImageToFile = async () => {
+    //   try {
+    //     const response = await fetch(defaultImage);
+    //     const blob = await response.blob();
+    //     setFormData({ ...formData, image: blob });
+    //   } catch (error) {
+    //     console.error("Error fetching image:", error);
+    //   }
+    // };
+    // convertImageToFile();
+    // }
     if (validPhNum) {
+      console.log(formData);
       const formDataTosend = new FormData();
       formDataTosend.append("name", formData.name);
       formDataTosend.append("email", formData.email);
@@ -126,27 +121,30 @@ export default function SignUp() {
         "password_confirmation",
         formData.password_confirmation
       );
+      formDataTosend.append("phone", formData.phone);
       formDataTosend.append("backpoint_id", formData.backpoint_id);
       formDataTosend.append("direction_id", formData.direction_id);
       formDataTosend.append("subdirection_ids[]", formData.subdirection_ids);
       formDataTosend.append("image", formData.image);
       try {
-        const response = await axios.post("register", formData, {
+        const response = await axios.post("register", formDataTosend, {
           headers: {
             Accept: "application/json",
             "Content-Type": "multipart/form-data",
           },
         });
-        console.log(response);
-        console.log(response.data);
+        // console.log(formData);
+        // console.log(response.data);
         if (response.status === 200) {
           localStorage.setItem("email", formData.email);
           localStorage.setItem("OtpVerivication", true);
           setShowOtpVerivication(true);
           setShowLoginThree(false);
+          setRegisterErrMsg("");
         }
       } catch (err) {
-        console.log(err.response.data);
+        console.log(formData);
+        // console.log(err.response.data);
         const errmesssage = err.response.data.message;
         setRegisterErrMsg(errmesssage.split(".")[0]);
         if (!err?.response) {
@@ -163,50 +161,23 @@ export default function SignUp() {
     }
   };
 
-  useEffect(() => {
-    const getBackPoint = async () => {
-      try {
-        const response = await axios.get(
-          "https://api-workculture.next-ai.pro/api/back-points",
-          {
-            headers: {
-              "content-type": "application/json",
-            },
-          }
-        );
-        setBackPointData(response.data.data);
-      } catch (err) {
-        if (!err?.response) {
-          console.log("No Server Response");
-        } else {
-          console.log("Error: ", err.response.data);
-        }
-      }
-    };
+  const handleLeftArrow = () => {
+    if (showLoginTwo) {
+      setShowLoginTwo(false);
+    } else if (showLoginThree) {
+      setShowLoginTwo(true);
+      setShowLoginThree(false);
+    } else return;
+  };
 
-    const getDirections = async () => {
-      try {
-        const response = await axios.get(
-          "https://api-workculture.next-ai.pro/api/directions",
-          {
-            headers: {
-              "content-type": "application/json",
-            },
-          }
-        );
-        setDirections(response.data.data);
-      } catch (err) {
-        if (!err?.response) {
-          console.log("No Server Response");
-        } else {
-          console.log("Error: ", err.response.data);
-        }
-      }
-    };
-
-    getBackPoint();
-    getDirections();
-  }, []);
+  const handleRightArrow = () => {
+    if (!showLoginTwo && !showLoginThree) {
+      setShowLoginTwo(true);
+    } else if (showLoginTwo) {
+      setShowLoginThree(true);
+      setShowLoginTwo(false);
+    } else return;
+  };
 
   useEffect(() => {
     document.title = "Work Culture | Sign-Up";
@@ -218,31 +189,18 @@ export default function SignUp() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   // const token = localStorage.getItem("userToken");
-  //   // token && navigate("/dashbord");
-  // }, [navigate]);
-
   useEffect(() => {
-    const result = userRegex.test(formData.name);
-    setValidName(result);
-  }, [formData.name]);
-
-  useEffect(() => {
-    const result = PasswordRegex.test(formData.password);
-    setValidPwd(result);
-    const match = formData.password === formData.password_confirmation;
-    setValidMatch(match);
-  }, [formData.password, formData.password_confirmation]);
-
-  useEffect(() => {
-    setErrMsg("");
-  }, [formData.name, formData.password, formData.password_confirmation]);
-
-  useEffect(() => {
-    const result = phoneRegx.test(formData.phone);
-    setValidPhNum(result);
-  }, [formData.phone]);
+    const convertImageToFile = async () => {
+      try {
+        const response = await fetch(defaultImage);
+        const blob = await response.blob();
+        setFormData({ ...formData, image: blob });
+      } catch (error) {
+        console.error("Error fetching image:", error);
+      }
+    };
+    convertImageToFile();
+  }, []);
 
   return (
     <>
@@ -313,18 +271,30 @@ export default function SignUp() {
         >
           <div
             className="logo"
-            style={{ marginBottom: "15px", marginTop: "160px" }}
+            style={{ marginBottom: "15px", marginTop: "100px" }}
           >
             <img src={logo} alt="" />
           </div>
-          <p style={{ display: OtpVerifecation ? "none" : "block" }}>Sign Up</p>
+          <p
+            style={{
+              display: localStorage.getItem("OtpVerifecation")
+                ? "none"
+                : "block",
+            }}
+          >
+            Sign Up
+          </p>
           <div
             className="circle"
             style={{
               display: showOtpVerivication ? "none" : "flex",
-              cursor: "pointer",
             }}
           >
+            <Icon
+              icon={"ic:baseline-arrow-left"}
+              onClick={() => handleLeftArrow()}
+              className={!showLoginTwo && !showLoginThree && "icon-off"}
+            />
             <div
               className={showLoginTwo || showLoginThree ? null : "active"}
               onClick={() => {
@@ -346,6 +316,11 @@ export default function SignUp() {
                 setShowLoginThree(true);
               }}
             ></div>
+            <Icon
+              icon={"ic:baseline-arrow-right"}
+              onClick={() => handleRightArrow()}
+              className={showLoginThree && "icon-off"}
+            />
           </div>
           <div
             className={
@@ -462,7 +437,14 @@ export default function SignUp() {
             </p>
           </div>
           <div className={showLoginTwo ? "login-2" : "hiddenLogin"}>
-            <div className="input" onClick={() => setShowdrop1(!showdrop1)}>
+            <div
+              className="input"
+              onClick={() => {
+                setShowdrop1(!showdrop1);
+                setShowdrop2(false);
+                setShowdrop3(false);
+              }}
+            >
               <NewInputs
                 type={"text"}
                 placeholder={" Select your Back Point"}
@@ -476,10 +458,6 @@ export default function SignUp() {
                     : "ri:arrow-down-wide-line"
                 }
                 className="arrowIcon"
-                onClick={() => {
-                  setShowdrop1(!showdrop1);
-                  setShowdrop2(false);
-                }}
               />
               <div
                 className="dropDown-menu"
@@ -492,7 +470,14 @@ export default function SignUp() {
                 />
               </div>
             </div>
-            <div className="input" onClick={() => setShowdrop2(!showdrop2)}>
+            <div
+              className="input"
+              onClick={() => {
+                setShowdrop2(!showdrop2);
+                setShowdrop1(false);
+                setShowdrop3(false);
+              }}
+            >
               <NewInputs
                 type={"text"}
                 placeholder={" Select your Agency"}
@@ -627,7 +612,10 @@ export default function SignUp() {
           <OtpVerifecation
             className={showOtpVerivication ? "showCode" : "hiddenLogin"}
             email={localStorage.getItem("email")}
-            handleClick={otpClick}
+            handleOtp={handleOtpRegister}
+            handleResendOtp={handleResendOtp}
+            otp={otp}
+            setOtp={setOtp}
           />
         </motion.div>
         <motion.div

@@ -6,9 +6,16 @@ import NewInputs from "../newInputs/NewInputs";
 export default function OtpVerifecation({
   className,
   email,
-  handleClick,
+  handleOtp,
+  handleResendOtp,
   tryRegiser,
+  otp,
+  setOtp,
 }) {
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div
       className={className}
@@ -20,12 +27,22 @@ export default function OtpVerifecation({
       <p>
         We have just sent a verification code to <br /> {email}
       </p>
-      <form onSubmit={handleClick}>
+      <form onSubmit={onSubmit}>
         <div>
-          <NewInputs oneNumber required className="number" />
+          <NewInputs
+            oneNumber
+            required
+            className="number"
+            otp={otp}
+            setOtp={setOtp}
+          />
         </div>
-        <Button title={"Verify"} />
-        <Button title={"Resend Code"} nonColored />
+        <Button title={"Verify"} handleClick={handleOtp} />
+        <Button
+          title={"Resend Code"}
+          nonColored
+          handleClick={handleResendOtp}
+        />
       </form>
     </div>
   );

@@ -19,16 +19,19 @@
   left: 20%;
   display: flex;
   align-items: center;
-  transition: 0.3s;
+  transition: 0.4s;
   z-index: 100;
+  padding: 10px 20px;
+  /* border: 1px solid var(--main-color); */
+  border-radius: 16px;
 }
 
 .Register-Error.on {
-  top: 5%;
+  top: 2%;
 }
 
 .Register-Error.off {
-  top: -10%;
+  top: -100px;
 }
 
 .Register-Error svg {
@@ -37,7 +40,7 @@
 }
 
 .Register-Error p {
-  font-size: 18px;
+  font-size: 20px;
   color: white;
   font-weight: 600;
 }
@@ -58,7 +61,7 @@
 }
 
 .main .img img {
-  width: fit-content;
+  width: 100%;
   height: 100%;
 }
 
@@ -70,13 +73,37 @@
   user-select: none;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* margin-top: 160px; */
   text-align: center;
 }
 
 .infoForm > p {
   color: white;
+}
+
+.infoForm .circle {
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin: 20px auto 30px;
+  width: 150px;
+}
+
+.infoForm .circle > svg {
+  font-size: 25px;
+  color: white;
+}
+
+.infoForm .circle .icon-off {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.infoForm .circle .icon-off:hover {
+  color: white;
+}
+
+.infoForm .circle > svg:hover {
+  color: var(--main-color);
 }
 
 .infoForm .circle > div {
@@ -90,21 +117,9 @@
   background-color: var(--main-color);
 }
 
-.infoForm .circle > div:nth-child(2) {
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
 .infoForm > p:nth-child(2) {
   font-weight: 700;
   font-size: 36px;
-}
-
-.infoForm .circle {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin: 20px auto 30px;
 }
 
 .infoForm .login-1,
