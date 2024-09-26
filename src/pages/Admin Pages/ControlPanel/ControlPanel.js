@@ -3,7 +3,7 @@ import "./controlpanel.css";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { TeamsNamesContext } from "../../../provider/TheName";
+import { TeamsNamesContext } from "../../../context/TheName";
 import Note from "../../../components/notenotification/Note";
 import QuestionsSection from "../../../components/QuestionsSection/QuestionsSection";
 import MembersReminder from "./MembersReminder";
@@ -209,10 +209,7 @@ export default function ControlPanel() {
               </div>
               <div className="arrow-and-btn">
                 <div className="right-arrow-container">
-                  <Link
-                    to={"/dashbord/admin/questions"}
-                    className="right-arrow"
-                  >
+                  <Link to={"/dashbord/questions"} className="right-arrow">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"

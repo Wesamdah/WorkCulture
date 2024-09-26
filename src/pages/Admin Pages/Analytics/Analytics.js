@@ -74,8 +74,8 @@ export default function Analytics() {
             </div>
 
             <div className="the-members">
-              {simpleNmaeArray.map((member) => (
-                <div className="the-member">
+              {simpleNmaeArray.map((member, index) => (
+                <div className="the-member" key={index}>
                   <div
                     className="profile-pic"
                     style={{ border: "2px solid #23C1FF" }}
@@ -118,8 +118,8 @@ export default function Analytics() {
               55%
             </div>
             <div className="the-members">
-              {simpleNmaeArray.map((member) => (
-                <div className="the-member">
+              {simpleNmaeArray.map((member, index) => (
+                <div className="the-member" key={index}>
                   <div
                     className="profile-pic"
                     style={{ border: "2px solid #FFEB37" }}
@@ -161,8 +161,8 @@ export default function Analytics() {
               55%
             </div>
             <div className="the-members">
-              {simpleNmaeArray.map((member) => (
-                <div className="the-member">
+              {simpleNmaeArray.map((member, index) => (
+                <div className="the-member" key={index}>
                   <div
                     className="profile-pic"
                     style={{ border: "2px solid #9824FF" }}
@@ -204,8 +204,8 @@ export default function Analytics() {
               55%
             </div>
             <div className="the-members">
-              {simpleNmaeArray.map((member) => (
-                <div className="the-member">
+              {simpleNmaeArray.map((member, index) => (
+                <div className="the-member" key={index}>
                   <div
                     className="profile-pic"
                     style={{ border: "3px solid white" }}
@@ -248,8 +248,8 @@ export default function Analytics() {
               55%
             </div>
             <div className="the-members">
-              {simpleNmaeArray.map((member) => (
-                <div className="the-member">
+              {simpleNmaeArray.map((member, index) => (
+                <div className="the-member" key={index}>
                   <div
                     className="profile-pic"
                     style={{ border: "3px solid #09C76A" }}

@@ -1,18 +1,17 @@
-import Sidebar from "./sidebar/Sidebar";
-import Header from "./header/Header";
-import AskQuestion from "./AskQuestion/AskQuestion";
-import Canvas from "./canvas/Canvas";
-import { dashBordRoutes } from "../../routes";
-import { Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import HomeSetters from "../Home/homesetters/HomeSetters";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { dashBordRoutes } from "../../routes";
 import { createContext } from "react";
 import axios from "axios";
+// components
+import Header from "./header/Header";
+import Sidebar from "./sidebar/Sidebar";
+import Canvas from "./canvas/Canvas";
+import AskQuestion from "./AskQuestion/AskQuestion";
 import TeamMeatSetter from "../TeamMatesSetter/TeamMeatSetter";
+import HomeSetters from "../Home/homesetters/HomeSetters";
 import RequiredAuth from "../../RequiredAuth";
-
-// /////
-
+// providers
 export const Context = createContext();
 export const CanvasContext = createContext();
 
@@ -72,7 +71,6 @@ export default function Main() {
           zIndex: "99",
         }}
       ></div>
-
       <div className="main-contnet" style={{ display: "flex" }}>
         <CanvasContext.Provider
           value={[
@@ -94,28 +92,25 @@ export default function Main() {
               <Routes>
                 {dashBordRoutes.map((route, index) =>
                   route.layout === "admin" ? (
-                    // <Route element={<RequiredAuth allowedRoles={"admin"} />}>
                     <Route
                       key={index}
-                      path={`admin/${route.path}`}
-                      element={route.component}
-                    />
+                      element={<RequiredAuth allowedRoles={"admin"} />}
+                    >
+                      <Route path={route.path} element={route.component} />
+                    </Route>
                   ) : (
-                    // </Route>
-                    // <Route element={<RequiredAuth allowedRoles={"user"} />}>
                     <Route
                       key={index}
-                      path={route.path}
-                      element={route.component}
-                    />
-                    // </Route>
+                      element={<RequiredAuth allowedRoles={"user"} />}
+                    >
+                      <Route path={route.path} element={route.component} />
+                    </Route>
                   )
                 )}
-                {/* <Route element={<RequiredAuth allowedRoles={"user"} />}> */}
-                <Route path="*" element={<Navigate to={"home"} />} />
-                <Route path="home/setter" element={<HomeSetters />} />
-                <Route path="users/:userId" element={<TeamMeatSetter />} />
-                {/* </Route> */}
+                <Route element={<RequiredAuth allowedRoles={"user"} />}>
+                  <Route path="home/setter" element={<HomeSetters />} />
+                  <Route path="users/:userId" element={<TeamMeatSetter />} />
+                </Route>
               </Routes>
             </Context.Provider>
           </div>

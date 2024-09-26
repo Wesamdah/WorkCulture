@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 // import ThirdImg from "../../assets/imgs/third.png";
 import Profile from "../../assets/imgs/clone of photo.png";
 import "./team.css";
-import { TeamsNamesContext } from "../../provider/TheName";
+import { TeamsNamesContext } from "../../context/TheName";
 import { useContext } from "react";
 
 export default function Team() {

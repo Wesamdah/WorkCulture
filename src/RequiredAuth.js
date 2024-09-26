@@ -1,18 +1,14 @@
 import React from "react";
-import UseAuth from "./hooks/useAuth";
-import { Navigate, Outlet, useLocation } from "react-router";
+import { Navigate, Outlet } from "react-router-dom";
 
-export default function RequiredAuth() {
-  //   const { auth } = UseAuth();
-  //   const adminRole = localStorage.getItem("adminRole");
-  //   const userRole = localStorage.getItem("userRole");
-
-  const userToken = localStorage.getItem("userToken");
-
-  const location = useLocation();
-  return userToken ? (
-    <Outlet state={{ from: location }} replace />
+export default function RequiredAuth({ allowedRoles }) {
+  const role = localStorage.getItem("userRole");
+  const email = localStorage.getItem("email");
+  return allowedRoles.includes(role) ? (
+    <Outlet />
+  ) : email ? (
+    <Navigate to="/unauthorized" />
   ) : (
-    <Navigate to="/Login" state={{ from: location }} replace />
+    <Navigate to="/login" />
   );
 }

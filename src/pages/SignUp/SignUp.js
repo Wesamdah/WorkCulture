@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "../../api/axios";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { motion } from "framer-motion";
@@ -10,19 +9,22 @@ import Button from "../../components/button/Button";
 import DropDown from "../../components/dropdown/DropDown";
 import NewInputs from "../../components/newInputs/NewInputs";
 import OtpVerifecation from "../../components/otpVerifecation/OtpVerifecation";
-import useFtechRegister from "../../hooks/useFetchRegister";
 // assetes
 import BackGround from "../../assets/imgs/background-2.png";
 import defaultImage from "../../assets/imgs/theDefaultPhoto.jpg";
 import logo from "../../assets/imgs/logo.png";
-import useValidInputsRegister from "../../hooks/useValidInputsRegister";
+// custom hooks
 import useValidOtp from "../../hooks/useValidOtp";
+import useValidInputsRegister from "../../hooks/useValidInputsRegister";
+import useEnterUserData from "../../hooks/useEnterUserData";
+//api
+import axios from "../../api/axios";
 
 const userRegex = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
 
 export default function SignUp() {
   const { formData, setFormData, backPointData, directions } =
-    useFtechRegister();
+    useEnterUserData();
   const { validName, validPwd, validMatch, validPhNum, errMsg, setErrMsg } =
     useValidInputsRegister(formData);
 
@@ -205,7 +207,9 @@ export default function SignUp() {
   return (
     <>
       <div
-        className={registerErrMsg ? "Register-Error on" : "Register-Error off"}
+        className={
+          registerErrMsg ? "Error-Message onSignUp" : "Error-Message offSignUp"
+        }
       >
         <div className="img">
           <svg

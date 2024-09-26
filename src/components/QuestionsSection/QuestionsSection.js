@@ -1,7 +1,7 @@
 import React from "react";
 import "./questionsSection.css";
 import { useContext } from "react";
-import { TeamsNamesContext } from "../../provider/TheName";
+import { TeamsNamesContext } from "../../context/TheName";
 import MemberQusetions from "./MembersQuestion";
 
 export default function QuestionsSection() {

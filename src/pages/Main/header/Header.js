@@ -1,7 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "./header.css";
 import { useLocation } from "react-router-dom";
+// css files
+import "./header.css";
+// images
 import ShortInfo from "./shortinfo/ShortInfo";
 import ProfileImg from "../../../assets/imgs/clone of photo.png";
 

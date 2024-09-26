@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./membersreminder.css";
 import Profile from "../../../assets/imgs/clone of photo.png";
-import { TeamsNamesContext } from "../../../provider/TheName";
+import { TeamsNamesContext } from "../../../context/TheName";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function MembersReminder({ member, index }) {

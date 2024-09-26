@@ -21,7 +21,7 @@ export default function DropDown({
   };
 
   return (
-    <div className={className}>
+    <div className={className} key={0}>
       <div style={{ width: "100%" }}>
         {data.map((item) => (
           <div

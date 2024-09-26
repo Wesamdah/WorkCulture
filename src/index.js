@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { TheNameProvider } from "./provider/TheName";
-import { AuthProvider } from "./provider/AuthProvider";
+import { TheNameProvider } from "./context/TheName";
+import { AuthProvider } from "./context/AuthProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

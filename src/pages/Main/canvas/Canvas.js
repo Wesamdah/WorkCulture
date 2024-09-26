@@ -1,7 +1,9 @@
 import React, { useContext, useState } from "react";
-import "./canvas.css";
-import { CanvasContext } from "../Main";
 import { Icon } from "@iconify/react/dist/iconify.js";
+// css files
+import "./canvas.css";
+// provider
+import { CanvasContext } from "../Main";
 
 export default function Canvas({ goals }) {
   const goals_URl = "http://localhost:3500/goals";

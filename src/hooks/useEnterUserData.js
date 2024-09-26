@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "../api/axios";
 
-export default function useFtechRegister() {
+export default function useEnterUserData() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",

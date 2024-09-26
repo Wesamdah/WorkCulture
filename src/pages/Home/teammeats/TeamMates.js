@@ -8,7 +8,7 @@ import Profile from "../../../assets/imgs/clone of photo.png";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 // import { TheNameProvider } from "../../../provider/TheName";
-import { TeamsNamesContext } from "../../../provider/TheName";
+import { TeamsNamesContext } from "../../../context/TheName";
 
 export default function TeamMates() {
   const [
