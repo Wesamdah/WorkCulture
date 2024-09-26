@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { dashBordRoutes } from "../../routes";
 import { createContext } from "react";
 import axios from "axios";
