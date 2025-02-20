@@ -9,26 +9,28 @@ import Unauthorized from "./pages/Unauthorized/Unauthorized";
 
 export function App() {
   return (
-    <>
-      <BrowserRouter basename="/work-culture">
-        <AnimatePresence mode="wait">
-          <Routes>
-            {/* public Routes */}
-            <Route path="/SignUp" element={<SignUp />} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="" element={<Navigate to="/login" />} />
-            <Route path="/*" element={<Error />} />
-            <Route path="/unauthorized" element={<Unauthorized />} />
-            {/* private route */}
-            <Route path="/dashbord/*" element={<MainLayout />} />
-            <Route
-              path="/dashbord"
-              element={<Navigate to="/work-culture/dashbord/home" />}
-            />
-          </Routes>
-        </AnimatePresence>
-      </BrowserRouter>
-    </>
+    <BrowserRouter basename="/work-culture">
+      <AnimatePresence mode="wait">
+        <Routes>
+          {/* public Routes */}
+          <Route path="/work-culture/SignUp" element={<SignUp />} />
+          <Route path="/work-culture/Login" element={<Login />} />
+          <Route
+            path="/work-culture"
+            element={<Navigate to="/work-culture/login" />}
+          />
+          <Route path="/*" element={<Error />} />
+          <Route path="/work-culture/unauthorized" element={<Unauthorized />} />
+
+          {/* private route */}
+          <Route path="/work-culture/dashbord/*" element={<MainLayout />} />
+          <Route
+            path="/work-culture/dashbord"
+            element={<Navigate to="/work-culture/dashbord/home" />}
+          />
+        </Routes>
+      </AnimatePresence>
+    </BrowserRouter>
   );
 }
 
