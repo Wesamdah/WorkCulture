@@ -49,7 +49,7 @@ export default function Sidebar({ showAsk, setShowAsk }) {
               key={index}
               style={{
                 width: "100%",
-                display: role === "admin" ? "block" : "none",
+                // display: role === "admin" ? "block" : "none",
               }}
             >
               <NavLink
@@ -76,7 +76,7 @@ export default function Sidebar({ showAsk, setShowAsk }) {
               key={index}
               style={{
                 width: "100%",
-                display: role === "user" ? "block" : "none",
+                // display: role === "user" ? "block" : "none",
               }}
             >
               <NavLink
@@ -104,7 +104,7 @@ export default function Sidebar({ showAsk, setShowAsk }) {
       <button
         className="btn-1"
         onClick={() => setShowAsk(true)}
-        style={{ display: role === 1 ? "none" : "block" }}
+        // style={{ display: role === 1 ? "none" : "block" }}
       >
         <img src={question} alt="" />
         {showSideBar && "Ask A Question"}

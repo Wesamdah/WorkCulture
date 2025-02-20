@@ -94,20 +94,22 @@ export default function Main() {
                   route.layout === "admin" ? (
                     <Route
                       key={index}
-                      element={<RequiredAuth allowedRoles={"admin"} />}
+                      // element={<RequiredAuth allowedRoles={"admin"} />}
                     >
                       <Route path={route.path} element={route.component} />
                     </Route>
                   ) : (
                     <Route
                       key={index}
-                      element={<RequiredAuth allowedRoles={"user"} />}
+                      // element={<RequiredAuth allowedRoles={"user"} />}
                     >
                       <Route path={route.path} element={route.component} />
                     </Route>
                   )
                 )}
-                <Route element={<RequiredAuth allowedRoles={"user"} />}>
+                <Route
+                //  element={<RequiredAuth allowedRoles={"user"} />}
+                >
                   <Route path="home/setter" element={<HomeSetters />} />
                   <Route path="users/:userId" element={<TeamMeatSetter />} />
                 </Route>

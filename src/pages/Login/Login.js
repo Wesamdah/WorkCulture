@@ -115,16 +115,32 @@ export default function Login() {
 
       setLoginErrMsg("");
     } catch (err) {
-      if (err.response.status === 400) setLoginErrMsg("No Server Response");
-      else {
+      // catch (err) {
+      //   if (err.response.status === 400) setLoginErrMsg("No Server Response");
+      //   else {
+      //     setLoginErrMsg("Invalid Entry");
+      //     if (
+      //       err.response?.status &&
+      //       err.response.data.message === "Account not verified"
+      //     ) {
+      //       setLoginErrMsg(err.response.data.message);
+      //     }
+      //   }
+      // }
+      if (!err.response) {
+        setLoginErrMsg("No Server Response");
+      } else if (err.response.status === 400) {
+        setLoginErrMsg("Bad Request");
+      } else {
         setLoginErrMsg("Invalid Entry");
         if (
           err.response?.status &&
-          err.response.data.message === "Account not verified"
+          err.response.data?.message === "Account not verified"
         ) {
           setLoginErrMsg(err.response.data.message);
         }
       }
+      console.error("Login Error:", err);
     }
   };
 
