@@ -23,7 +23,7 @@ export function App() {
             <Route path="/dashbord/*" element={<MainLayout />} />
             <Route
               path="/dashbord"
-              element={<Navigate to="/dashbord/home" />}
+              element={<Navigate to="/work-culture/dashbord/home" />}
             />
           </Routes>
         </AnimatePresence>
