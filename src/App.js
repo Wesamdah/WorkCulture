@@ -10,7 +10,7 @@ import Unauthorized from "./pages/Unauthorized/Unauthorized";
 export function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/work-culture">
         <AnimatePresence mode="wait">
           <Routes>
             {/* public Routes */}
