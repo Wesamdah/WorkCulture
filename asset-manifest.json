@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/WorkCulture/static/css/main.1d3929c8.css",
+    "main.js": "/WorkCulture/static/js/main.4afe4a5c.js",
+    "static/media/backgound.png": "/WorkCulture/static/media/backgound.a7ca63a1ddcae5675d80.png",
+    "static/media/background-2.png": "/WorkCulture/static/media/background-2.a7a53230e12ddcf666bd.png",
+    "static/media/testingProfilePic.jpg": "/WorkCulture/static/media/testingProfilePic.8c0944b1e5def8905944.jpg",
+    "static/media/Gilroy-UltraLight.ttf": "/WorkCulture/static/media/Gilroy-UltraLight.6c356bf421a0b34d2b76.ttf",
+    "static/media/Gilroy-Light.ttf": "/WorkCulture/static/media/Gilroy-Light.0ac7c2f9cb59ea1ba11c.ttf",
+    "static/media/Gilroy-Thin.ttf": "/WorkCulture/static/media/Gilroy-Thin.fc813b757bc09eb509dc.ttf",
+    "static/media/Gilroy-Medium.ttf": "/WorkCulture/static/media/Gilroy-Medium.1c23f810e531d0702f76.ttf",
+    "static/media/Gilroy-Regular.ttf": "/WorkCulture/static/media/Gilroy-Regular.fa652e766b6a85a1f9cb.ttf",
+    "static/media/Gilroy-Semibold.ttf": "/WorkCulture/static/media/Gilroy-Semibold.41fa36c3c8e966b35423.ttf",
+    "static/media/Gilroy-Bold.ttf": "/WorkCulture/static/media/Gilroy-Bold.901a60fc2835c74fba67.ttf",
+    "static/media/profiletest.png": "/WorkCulture/static/media/profiletest.e30519f548d1e110c6a4.png",
+    "static/media/theDefaultPhoto.jpg": "/WorkCulture/static/media/theDefaultPhoto.bdeb9f6f0b35b2bf93b6.jpg",
+    "static/media/clone of photo.png": "/WorkCulture/static/media/clone of photo.7b0dcf013adb51b96786.png",
+    "static/media/coloredCalender.svg": "/WorkCulture/static/media/coloredCalender.1608f8cefe12408816fcbbb697db0a7e.svg",
+    "static/media/questionMark.svg": "/WorkCulture/static/media/questionMark.62c3e54705a7712a3f09ee9290fd578b.svg",
+    "index.html": "/WorkCulture/index.html",
+    "main.1d3929c8.css.map": "/WorkCulture/static/css/main.1d3929c8.css.map",
+    "main.4afe4a5c.js.map": "/WorkCulture/static/js/main.4afe4a5c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1d3929c8.css",
+    "static/js/main.4afe4a5c.js"
+  ]
+}
