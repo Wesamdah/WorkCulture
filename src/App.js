@@ -13,21 +13,15 @@ export function App() {
       <AnimatePresence mode="wait">
         <Routes>
           {/* public Routes */}
-          <Route path="/work-culture/SignUp" element={<SignUp />} />
-          <Route path="/work-culture/Login" element={<Login />} />
-          <Route
-            path="/work-culture"
-            element={<Navigate to="/work-culture/login" />}
-          />
+          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/*" element={<Error />} />
-          <Route path="/work-culture/unauthorized" element={<Unauthorized />} />
+          <Route path="/unauthorized" element={<Unauthorized />} />
 
           {/* private route */}
-          <Route path="/work-culture/dashbord/*" element={<MainLayout />} />
-          <Route
-            path="/work-culture/dashbord"
-            element={<Navigate to="/work-culture/dashbord/home" />}
-          />
+          <Route path="/dashbord/*" element={<MainLayout />} />
+          <Route path="/dashbord" element={<Navigate to="/dashbord/home" />} />
         </Routes>
       </AnimatePresence>
     </BrowserRouter>

@@ -2,7 +2,7 @@
   "name": "work-culture",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Wesamdah.github.io/work-culture",
+  "homepage": "https://Wesamdah.github.io/WorkCulture",
   "dependencies": {
     "@iconify/react": "^4.1.1",
     "@testing-library/jest-dom": "^5.17.0",
